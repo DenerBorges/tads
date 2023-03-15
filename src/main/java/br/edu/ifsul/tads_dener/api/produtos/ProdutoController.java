@@ -1,5 +1,6 @@
 package br.edu.ifsul.tads_dener.api.produtos;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
@@ -10,9 +11,12 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/produtos")
 public class ProdutoController {
+
+    @Autowired
+    private ProdutoService service;
     @GetMapping
-    public String selectAll() {
-        return "selectAll()";
+    public List<Produto> selectAll() {
+        return service.getProdutos();
     }
     @GetMapping("{id}")
     public String selectById(@PathVariable("id") Long id) {
