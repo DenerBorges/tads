@@ -3,17 +3,10 @@ package br.edu.ifsul.tads_dener.api.produtos;
 import lombok.Data;
 import org.modelmapper.ModelMapper;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.math.BigDecimal;
 
 @Data
-@Entity
-public class Produto {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ProdutoDTO {
     private Long id;
     private String nome;
     private String descricao;
@@ -21,8 +14,8 @@ public class Produto {
     private Long estoque;
     private Boolean situacao;
 
-    public static Produto create(ProdutoDTO p){
+    public static ProdutoDTO create(Produto p){
         ModelMapper modelMapper = new ModelMapper();
-        return modelMapper.map(p, Produto.class);
+        return modelMapper.map(p, ProdutoDTO.class);
     }
 }

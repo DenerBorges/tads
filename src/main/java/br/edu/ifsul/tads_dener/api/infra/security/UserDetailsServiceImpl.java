@@ -1,8 +1,7 @@
 package br.edu.ifsul.tads_dener.api.infra.security;
 
-import br.edu.ifsul.tads_dener.api.clientes.UserRepository;
+import br.edu.ifsul.tads_dener.api.users.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
