@@ -27,7 +27,7 @@ public class ProjetoController {
         return ResponseEntity.ok(projeto);
     }
 
-    @GetMapping("/nome/{nome")
+    @GetMapping("/nome/{nome}")
     public ResponseEntity<List<ProjetoDTO>> selectByNome(@PathVariable("nome") String nome) {
         List<ProjetoDTO> projetos = service.getProjetosByNome(nome);
         return projetos.isEmpty() ?
